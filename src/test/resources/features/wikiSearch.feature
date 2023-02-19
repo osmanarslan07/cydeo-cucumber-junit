@@ -1,5 +1,4 @@
 
-@wip
 Feature: Wikipedia search functionality and verifications
 
   #WSF-45234
