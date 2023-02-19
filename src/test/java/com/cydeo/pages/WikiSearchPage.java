@@ -20,6 +20,8 @@ public class WikiSearchPage {
     @FindBy(id = "firstHeading")
     public WebElement mainHeader;
 
+    @FindBy(className = "fn")
+    public WebElement imageHeader;
 
 
 

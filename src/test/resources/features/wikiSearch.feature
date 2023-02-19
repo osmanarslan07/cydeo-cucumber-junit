@@ -1,8 +1,10 @@
+
+@wip
 Feature: Wikipedia search functionality and verifications
 
   #WSF-45234
 
-  @wip
+
   Scenario: Wikipedia Search Functionality Title Verification
   Given User is on Wikipedia home page
   When User types "Steve Jobs" in the wiki search box
@@ -15,3 +17,9 @@ Feature: Wikipedia search functionality and verifications
   When User types "Steve Jobs" in the wiki search box
   And User clicks wiki search button
   Then User sees "Steve Jobs" is in the main header
+
+  Scenario: Wikipedia Search Functionality Image Header Verification
+  Given User is on Wikipedia home page
+  When User types "Steve Jobs" in the wiki search box
+  And User clicks wiki search button
+  Then User sees "Steve Jobs" is in the image header
