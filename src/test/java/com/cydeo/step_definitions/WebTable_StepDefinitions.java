@@ -28,17 +28,15 @@ public class WebTable_StepDefinitions {
         webTableLoginPage.inputPassword.sendKeys(string);
 
     }
-
     @When("user clicks to login button")
     public void user_clicks_to_login_button() {
         webTableLoginPage.loginButton.click();
 
     }
-
     @Then("user should see url contains orders")
     public void user_should_see_url_contains_orders() {
 
-
+        BrowserUtils.verifyUrlContains("orders");
 
     }
 
