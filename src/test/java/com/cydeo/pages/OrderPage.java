@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class OrderPage extends BasePage {
 
     public OrderPage(){
@@ -38,8 +40,8 @@ public class OrderPage extends BasePage {
     @FindBy(name = "cardExp")
     public WebElement inputCardExp;
 
-    @FindBy(xpath = "//input[@value='American Express']")
-    public WebElement inputCard;
+    @FindBy(name = "card")
+    public List<WebElement> cardType;
 
     @FindBy(xpath = "//button[.='Process Order']")
     public WebElement processOrderButton;

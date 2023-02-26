@@ -3,8 +3,10 @@ package com.cydeo.step_definitions;
 import com.cydeo.pages.BasePage;
 import com.cydeo.pages.OrderPage;
 import com.cydeo.pages.WebTableLoginPage;
+import com.cydeo.utilities.BrowserUtils;
 import com.cydeo.utilities.ConfigurationReader;
 import com.cydeo.utilities.Driver;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -37,10 +39,25 @@ public class Order_StepDefinitions {
         Select select = new Select(orderPage.productDropdown);
         select.selectByVisibleText(string);
     }
-    @When("user enters quantity {string}")
-    public void user_enters_quantity(String string) {
+    //    @When("user enters quantity {string}")
+//    public void user_enters_quantity(String string) {
+//
+//    }
+    @And("user enters quantity {int}")
+    public void userEntersQuantity(int quantity) {
+        //accepting int argument and sending it using sendKeys() method
+        //since sendKeys() method only accepts String, we need to either concat with ""
+        //or send String.valueOf(int);
+        //orderPage.inputQuantity.sendKeys(String.valueOf(quantity));
+
+        //clear() method will delete whatever is in the input box
+        //orderPage.inputQuantity.clear();
+
+        //imitating pressing back_space button from keyboard to delete existing input
         orderPage.inputQuantity.sendKeys(Keys.BACK_SPACE);
-        orderPage.inputQuantity.sendKeys(string);
+
+        orderPage.inputQuantity.sendKeys(quantity+"");
+
     }
     @When("user enters customer name {string}")
     public void user_enters_customer_name(String string) {
@@ -63,8 +80,11 @@ public class Order_StepDefinitions {
          orderPage.inputZip.sendKeys(string);
     }
     @When("user selects credit card type {string}")
-    public void user_selects_credit_card_type(String string) {
-         orderPage.inputCard.click();
+    public void user_selects_credit_card_type(String expectedCardType) {
+
+        //This line will loop through the list and decide which radio button to click
+        BrowserUtils.clickRadioButton(orderPage.cardType, expectedCardType);
+
     }
     @When("user enters credit card number {string}")
     public void user_enters_credit_card_number(String string) {
