@@ -18,6 +18,13 @@ public class WebTable_StepDefinitions {
         Driver.getDriver().get(url);
     }
 
+    @When("user enters username {string} password {string} and logins")
+    public void user_enters_username_password_and_logins(String username, String pw) {
+
+        webTableLoginPage.login(username,pw);
+
+    }
+
     @When("user enters username {string}")
     public void user_enters_username(String string) {
         webTableLoginPage.inputUsername.sendKeys(string);
@@ -39,5 +46,7 @@ public class WebTable_StepDefinitions {
         BrowserUtils.verifyUrlContains("orders");
 
     }
+
+
 
 }
