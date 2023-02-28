@@ -60,7 +60,7 @@ public class Hooks {
 
     @AfterStep
     public void afterStep(){
-        BrowserUtils.sleep(1);
+        //BrowserUtils.sleep(1);
         System.out.println("-------------> applying tearDown  using @AfterStep");
     }
 
