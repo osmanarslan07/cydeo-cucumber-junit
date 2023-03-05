@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>cydeo-cucumber-junit</artifactId>
+    <artifactId>EU10-CucumberJunit</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -25,7 +25,7 @@
                     <!--
                     <useUnlimitedThreads>true</useUnlimitedThreads>
 -->
-                    <threadCount>1</threadCount>
+                    <threadCount>4</threadCount>
                     <perCoreThreadCount>false</perCoreThreadCount>
                     <testFailureIgnore>true</testFailureIgnore>
                     <includes>
@@ -35,6 +35,7 @@
             </plugin>
         </plugins>
     </build>
+
 
 
     <dependencies>
@@ -50,7 +51,7 @@
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
-            <version>5.3.1</version>
+            <version>5.1.0</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/com.github.javafaker/javafaker -->
@@ -74,10 +75,18 @@
             <version>7.2.3</version>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>me.jvt.cucumber</groupId>
             <artifactId>reporting-plugin</artifactId>
-            <version>7.3.0</version>
+            <version>7.2.0</version>
+        </dependency>
+
+        <!--If you want to get rid of SLF4J Failed to load message from the console -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.7.32</version>
         </dependency>
     </dependencies>
 
